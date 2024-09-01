@@ -2,6 +2,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { GameQuery } from "../App";
 import apiClient, { FetchResponse } from "../services/api-client";
+import { Platform } from "./usePlatforms";
 
 
 export interface Game {
@@ -13,11 +14,7 @@ export interface Game {
     rating_top:number;
   }
 
- export interface Platform {
-    id:number;
-    name:string;
-    slug:string;
-  }
+
 
 // const useGames =(gameQuery: GameQuery) =>
 //   useData<Game>('/games',{
