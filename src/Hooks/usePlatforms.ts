@@ -10,11 +10,14 @@ export interface Platform {
 //const usePlatforms =() => ({data: platforms, isLoading:false, error:null})
 const apiClient = new APIClient<Platform>('/platforms/parents');
 
-const usePlatforms = () => useQuery({
+const usePlatforms = () => 
+  useQuery({
     queryKey: ['platforms'],
     queryFn: apiClient.getAll,
-      staleTime: 24 * 60 * 60 * 1000, //24hr stale time - it will refrash every 24hr
-      initialData: {count: platforms.length, results: platforms} // provide initial static data 
+    staleTime: 24 * 60 * 60 * 1000, //24hr stale time - it will refrash every 24hr
+    initialData: {count: platforms.length, results: platforms} // provide initial static data 
   })
+
+  
 
 export default usePlatforms;
