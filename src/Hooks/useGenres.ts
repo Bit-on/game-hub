@@ -16,7 +16,7 @@ const useGenres = () => useQuery({
   queryKey: ['genres'],
   queryFn: apiClient.getAll,
     staleTime: 24 * 60 * 60 * 1000, //24hr stale time - it will refrash every 24hr
-    initialData: {count: genres.length, results: genres} // provide initial static data 
+    initialData: genres, // provide initial static data 
 })
 
 export default useGenres;
