@@ -11,6 +11,9 @@ interface Props {
 const PlatformSelector = ({ onSelectPlatform, selectedPlatformId }: Props) => {
   const { data, error } = usePlatforms();
   const selectedPlatform = usePlatform(selectedPlatformId);
+  const refreshPage = () => {
+    window.location.reload();
+  };
   if (error) return null;
   return (
     <Menu>
@@ -18,7 +21,9 @@ const PlatformSelector = ({ onSelectPlatform, selectedPlatformId }: Props) => {
         {selectedPlatform?.name || "Platforms"}{" "}
       </MenuButton>
       <MenuList>
-        <MenuItem key="">All</MenuItem>
+        <MenuItem key="0" onClick={refreshPage}>
+          All
+        </MenuItem>
         {data?.results.map((platform) => (
           <MenuItem
             key={platform.id}
