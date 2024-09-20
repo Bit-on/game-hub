@@ -10,9 +10,10 @@ const PlatformSelector = () => {
   const { data, error } = usePlatforms();
   const selectedPlatform = usePlatform(selectedPlatformId);
   const setSelectedPlatformId = useGameQueryStore((s) => s.setPlatformId);
+  const setSearchText = useGameQueryStore((s) => s.setSearchText);
 
   const refreshPage = () => {
-    setSelectedPlatformId(0);
+    setSearchText("");
   };
   if (error) return null;
   return (
