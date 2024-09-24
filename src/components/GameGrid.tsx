@@ -1,5 +1,5 @@
 import { SimpleGrid, Spinner, Text } from "@chakra-ui/react";
-import useGames from "../Hooks/useGames";
+import useGames from "../hooks/useGames";
 import GameCard from "./GameCard";
 import GaleCardSkeleton from "./GaleCardSkeleton";
 import GameCardContainer from "./GameCardContainer";
